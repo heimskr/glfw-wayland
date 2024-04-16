@@ -1,0 +1,15 @@
+--- a/src/wl_window.c	2024-02-23 03:45:31.000000000 -0800
++++ b/src/wl_window.c	2024-04-15 19:21:12.246914734 -0700
+@@ -2236,8 +2236,10 @@
+     // A Wayland client is not aware of its position, so just warn and leave it
+     // as (0, 0)
+ 
+-    _glfwInputError(GLFW_FEATURE_UNAVAILABLE,
+-                    "Wayland: The platform does not provide the window position");
++    // _glfwInputError(GLFW_FEATURE_UNAVAILABLE,
++    //                 "Wayland: The platform does not provide the window position");
++
++    fprintf(stderr, "[GLFW] Wayland: The platform does not provide the window position");
+ }
+ 
+ void _glfwSetWindowPosWayland(_GLFWwindow* window, int xpos, int ypos)
